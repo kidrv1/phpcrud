@@ -32,7 +32,7 @@
                             <!-- Sidenav Heading (crud samples)-->
                             <div class="sidenav-menu-heading">CRUD Samples</div>
                             <!-- Sidenav Link (index - employee management)-->
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <div class="nav-link-icon"><i data-feather="users"></i></div>
                                 Employees
                             </a>
