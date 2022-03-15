@@ -62,7 +62,7 @@
                                         </h1>
                                     </div>
                                     <div class="col-12 col-xl-auto mb-3">
-                                        <button class="btn btn-sm btn-light text-primary" type="button" data-bs-toggle="modal" data-bs-target="#createGroupModal">
+                                        <button class="btn btn-sm btn-primary-soft text-primary" type="button" data-bs-toggle="modal" data-bs-target="#createGroupModal">
                                             <i class="me-1" data-feather="plus"></i>
                                             Add Employee
                                         </button>
@@ -134,8 +134,8 @@
                                             <td><?php echo $row['email']; ?></td>
                                             <td><?php echo $row['department']; ?></td>
                                             <td>
-                                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2" type="button" data-bs-toggle="modal" data-bs-target="#editGroupModal"><i data-feather="edit"></i></button>
-                                                <button class="btn btn-datatable btn-icon btn-transparent-dark"  type="button" data-bs-toggle="modal" data-bs-target="#deleteGroupModal"><i data-feather="trash-2"></i></button>
+                                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2" type="button" data-bs-toggle="modal" data-bs-target="#editGroupModal"><i data-feather="edit" class="text-primary"></i></button>
+                                                <button class="btn btn-datatable btn-icon btn-transparent-dark"  type="button" data-bs-toggle="modal" data-bs-target="#deleteGroupModal"><i data-feather="trash-2" class="text-primary"></i></button>
                                             </td>
                                         </tr>
                                     </tbody>
