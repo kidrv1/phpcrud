@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $connection = mysqli_connect("localhost","root","");
 $db = mysqli_select_db($connection, 'phpcrud');
@@ -15,14 +16,14 @@ if(isset($_POST['insertdata']))
 
     if($query_run)
     {
-        echo "<script type='text/javascript'>
-        window.location='../index.php';
-        alert('Employee Saved');
-        </script>";
+        $_SESSION['status'] = "Employee added successfully!";
+        header('location: ../index.php');
+
     }
     else
     {
-        echo "<script> alert('Employee Not Saved'); </script>";
+        $_SESSION['status'] = "Failed to add employee";
+        header('location: ../index.php');
     }
 }
 

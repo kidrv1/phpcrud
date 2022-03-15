@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $connection = mysqli_connect("localhost","root","");
 $db = mysqli_select_db($connection, 'phpcrud');
 
@@ -11,14 +13,13 @@ if(isset($_POST['deletedata']))
 
     if($query_run)
     {
-        echo "<script type='text/javascript'>
-        window.location='../index.php';
-        alert('Employee Removed');
-        </script>";
+        $_SESSION['status'] = "Employee deleted successfully!";
+        header('location: ../index.php');
     }
     else
     {
-        echo '<script> alert("Employee Not Deleted"); </script>';
+        $_SESSION['status'] = "Failed to delete employee";
+        header('location: ../index.php');
     }
 }
 

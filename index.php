@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -32,7 +36,7 @@
                             <!-- Sidenav Heading (crud samples)-->
                             <div class="sidenav-menu-heading">CRUD Samples</div>
                             <!-- Sidenav Link (index - employee management)-->
-                            <a class="nav-link" href="index.php">
+                            <a class="nav-link active" href="index.php">
                                 <div class="nav-link-icon"><i data-feather="users"></i></div>
                                 Employees
                             </a>
@@ -60,7 +64,7 @@
                                     <div class="col-12 col-xl-auto mb-3">
                                         <button class="btn btn-sm btn-light text-primary" type="button" data-bs-toggle="modal" data-bs-target="#createGroupModal">
                                             <i class="me-1" data-feather="plus"></i>
-                                            Create New Group
+                                            Add Employee
                                         </button>
                                     </div>
                                 </div>
@@ -71,6 +75,21 @@
                     <div class="container-fluid px-4">
                         <div class="card">
                             <div class="card-body">
+
+                            <?php 
+                                if(isset($_SESSION['status']))
+                                {
+                                ?>
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <?= $_SESSION['status']; ?>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                <?php 
+                                unset($_SESSION['status']);
+                                }
+                            ?>
+
+
                             <!-- Call database and select all employees to show -->
                             <?php
                                 $connection = mysqli_connect("localhost","root","");
@@ -281,3 +300,9 @@
           document.getElementById("department").value = j[4].innerHTML;
           }
       </script>
+
+    <script>
+    $(".alert").delay(4000).slideUp(200, function() {
+    $(this).alert('close');
+    });
+    </script>

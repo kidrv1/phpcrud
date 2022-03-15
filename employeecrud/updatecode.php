@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $connection = mysqli_connect("localhost","root","");
 $db = mysqli_select_db($connection, 'phpcrud');
 
@@ -16,14 +18,13 @@ $db = mysqli_select_db($connection, 'phpcrud');
 
         if($query_run)
         {
-            echo "<script type='text/javascript'>
-        window.location='../index.php';
-        alert('Employee Updated');
-        </script>";
+            $_SESSION['status'] = "Employee updated successfully!";
+            header('location: ../index.php');
         }
         else
         {
-            echo '<script> alert("Employee Not Updated"); </script>';
+            $_SESSION['status'] = "Failed to update employee";
+            header('location: ../index.php');
         }
     }
 ?>
