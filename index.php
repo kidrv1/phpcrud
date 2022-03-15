@@ -254,7 +254,7 @@
                                     <form action="employeecrud/deletecode.php" method="POST">
                                     <div class="mb-3 mt-3 text-center">
                                     <input type="hidden" name="delete_id" id="delete_id">
-                                        <h5>Are you sure you want to remove this data?</h5>
+                                        <h5>Are you sure you want to remove this employee?</h5>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -302,7 +302,7 @@
       </script>
 
     <script>
-    $(".alert").delay(4000).slideUp(200, function() {
-    $(this).alert('close');
-    });
+        $(".alert-dismissible").fadeTo(2000, 500).slideUp(500, function(){
+        $(".alert-dismissible").alert('close');
+        });
     </script>
